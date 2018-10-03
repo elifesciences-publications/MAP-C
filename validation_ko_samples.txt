@@ -1,0 +1,6 @@
+validation_ko_3C_1	3C	validation_ko_3C_1.1.fastq.gz	validation_ko_3C_1.2.fastq.gz
+validation_ko_3C_2	3C	validation_ko_3C_2.1.fastq.gz	validation_ko_3C_2.2.fastq.gz
+validation_ko_3C_3	3C	validation_ko_3C_3.1.fastq.gz	validation_ko_3C_3.2.fastq.gz
+validation_ko_genomic_1	genomic	validation_ko_genomic_1.1.fastq.gz	validation_ko_genomic_1.2.fastq.gz
+validation_ko_genomic_2	genomic	validation_ko_genomic_2.1.fastq.gz	validation_ko_genomic_2.2.fastq.gz
+validation_ko_genomic_3	genomic	validation_ko_genomic_3.1.fastq.gz	validation_ko_genomic_3.2.fastq.gz

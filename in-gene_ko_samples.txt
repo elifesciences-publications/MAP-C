@@ -1,0 +1,6 @@
+in-gene_ko_3C_1	in-gene_ko_3C_1.1.fastq.gz	in-gene_ko_3C_1.2.fastq.gz
+in-gene_ko_3C_2	in-gene_ko_3C_2.1.fastq.gz	in-gene_ko_3C_2.2.fastq.gz
+in-gene_ko_genomic_1	in-gene_ko_genomic_1.1.fastq.gz	in-gene_ko_genomic_1.2.fastq.gz
+in-gene_ko_genomic_2	in-gene_ko_genomic_2.1.fastq.gz	in-gene_ko_genomic_2.2.fastq.gz
+in-gene_ko_offtarget_1	in-gene_ko_offtarget_1.1.fastq.gz	in-gene_ko_offtarget_1.2.fastq.gz
+in-gene_ko_offtarget_2	in-gene_ko_offtarget_2.1.fastq.gz	in-gene_ko_offtarget_2.2.fastq.gz

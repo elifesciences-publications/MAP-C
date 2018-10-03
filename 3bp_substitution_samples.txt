@@ -1,0 +1,6 @@
+3bp_substitution_3C_1	3C	3bp_substitution_3C_1.1.fastq.gz	3bp_substitution_3C_1.2.fastq.gz
+3bp_substitution_3C_2	3C	3bp_substitution_3C_2.1.fastq.gz	3bp_substitution_3C_2.2.fastq.gz
+3bp_substitution_genomic_1	genomic	3bp_substitution_genomic_1.1.fastq.gz	3bp_substitution_genomic_1.2.fastq.gz
+3bp_substitution_genomic_2	genomic	3bp_substitution_genomic_2.1.fastq.gz	3bp_substitution_genomic_2.2.fastq.gz
+3bp_substitution_offtarget_1	offtarget	3bp_substitution_offtarget_1.1.fastq.gz	3bp_substitution_offtarget_1.2.fastq.gz
+3bp_substitution_offtarget_2	offtarget	3bp_substitution_offtarget_2.1.fastq.gz	3bp_substitution_offtarget_2.2.fastq.gz

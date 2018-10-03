@@ -1,0 +1,6 @@
+subsequences_3C_1	3C	subsequences_3C_1.1.fastq.gz	subsequences_3C_1.2.fastq.gz
+subsequences_3C_2	3C	subsequences_3C_2.1.fastq.gz	subsequences_3C_2.2.fastq.gz
+subsequences_genomic_1	genomic	subsequences_genomic_1.1.fastq.gz	subsequences_genomic_1.2.fastq.gz
+subsequences_genomic_2	genomic	subsequences_genomic_2.1.fastq.gz	subsequences_genomic_2.2.fastq.gz
+subsequences_offtarget_1	offtarget	subsequences_offtarget_1.1.fastq.gz	subsequences_offtarget_1.2.fastq.gz
+subsequences_offtarget_2	offtarget	subsequences_offtarget_2.1.fastq.gz	subsequences_offtarget_2.2.fastq.gz
