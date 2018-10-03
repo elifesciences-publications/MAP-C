@@ -1,0 +1,9 @@
+ILY456_exponential_Sau3AI	ScSu	32000	Surep-rDNA	1.0
+ILY456_saturated_Sau3AI	ScSu	32000	Surep-rDNA	1.0
+ILY456_exponential_rep2_Sau3AI	ScSu	32000	Surep-rDNA	1.0
+YMD3266_saturated_Sau3AI	ScSu	32000	Surep-rDNA	1.0
+YMD3267_saturated_Sau3AI	ScSu	32000	Surep-rDNA	1.0
+YMD3268_saturated_Sau3AI	ScSu	32000	Surep-rDNA	1.0
+YMD3269_saturated_Sau3AI	ScSu	32000	Surep-rDNA	1.0
+YMD3920_exponential_Sau3AI	ScSu	32000	Surep-rDNA	1.0
+YMD3920_saturated_Sau3AI	ScSu	32000	Surep-rDNA	1.0

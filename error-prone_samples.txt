@@ -1,0 +1,7 @@
+error-prone_WT	WT	error-prone_WT.1.fastq.gz	error-prone_WT.2.fastq.gz
+error-prone_3C_1	3C	error-prone_3C_1.1.fastq.gz	error-prone_3C_1.2.fastq.gz
+error-prone_3C_2	3C	error-prone_3C_2.1.fastq.gz	error-prone_3C_2.2.fastq.gz
+error-prone_genomic_1	genomic	error-prone_genomic_1.1.fastq.gz	error-prone_genomic_1.2.fastq.gz
+error-prone_genomic_2	genomic	error-prone_genomic_2.1.fastq.gz	error-prone_genomic_2.2.fastq.gz
+error-prone_offtarget_1	offtarget	error-prone_offtarget_1.1.fastq.gz	error-prone_offtarget_1.2.fastq.gz
+error-prone_offtarget_2	offtarget	error-prone_offtarget_2.1.fastq.gz	error-prone_offtarget_2.2.fastq.gz
