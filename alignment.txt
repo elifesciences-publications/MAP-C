@@ -1,0 +1,60 @@
+Scer	0	1038	full
+Scer	197	206	Rgt1	72.7
+Scer	518	527	Leu3	54.2
+Scer	528	539	Leu3	47.9
+Scer	536	545	Leu3	88.2
+Scer	569	575	Sdd4	100
+Scer	583	592	Rgt1	49.5
+Scer	608	617	Rgt1	59.5
+Scer	630	639	Rgt1	97.5
+Scer	651	660	Rgt1	95.3
+Scer	672	678	Sdd4	97.1
+Spar	0	1068	full
+Spar	164	173	Rgt1	52.0
+Spar	189	198	Rgt1	79.1
+Spar	531	540	Leu3	59.3
+Spar	543	552	Leu3	47.9
+Spar	549	558	Leu3	88.2
+Spar	592	597	Sdd4	100
+Spar	606	615	Rgt1	49.5
+Spar	613	622	Leu3	68.0
+Spar	631	640	Rgt1	59.5
+Spar	652	661	Rgt1	97.5
+Spar	673	682	Rgt1	97.8
+Spar	694	700	Sdd4	97.1
+Smik	0	1021	full
+Smik	188	197	Rgt1	76.6
+Smik	317	326	Rgt1	47.3
+Smik	513	522	Leu3	81.3
+Smik	540	546	Sdd4	82.5
+Smik	554	563	Rgt1	49.5
+Smik	580	589	Rgt1	54.7
+Smik	610	619	Rgt1	97.5
+Smik	633	640	Rgt1	95.3
+Smik	653	658	Sdd4	88.2
+Skud	0	1009	full
+Skud	128	137	Rgt1	46.2
+Skud	425	434	Rgt1	59.8
+Skud	498	507	Rgt1	45.9
+Skud	505	514	Leu3	54.2
+Skud	517	526	Leu3	47.9
+Skud	523	532	Leu3	88.2
+Skud	535	544	Leu3	59.9
+Skud	558	566	Rgt1	49.5
+Skud	581	591	Rgt1	63.5
+Skud	603	612	Rgt1	97.5
+Skud	624	633	Rgt1	92.9
+Skud	645	651	Sdd4	97.1
+Skud	836	845	Rgt1	46.3
+Suva	0	977	full
+Suva	203	212	Rgt1	60.3
+Suva	255	264	Rgt1	61.0
+Suva	499	508	Leu3	88.2
+Suva	521	527	Sdd4	97.1
+Suva	526	532	Sdd4	100
+Suva	541	550	Rgt1	46.9
+Suva	560	569	Rgt1	66.3
+Suva	581	588	Rgt1	95.6
+Suva	602	611	Rgt1	95.6
+Suva	743	752	Rgt1	51.0
+Suva	792	801	Rgt1	52.8

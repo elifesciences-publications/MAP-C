@@ -25,6 +25,8 @@ library(stringr)
 samps <- c("3C_A1","3C_A2","3C_A3","3C_B1","3C_B2","3C_B3",
            "genomic_A1","genomic_A2","genomic_A3","genomic_B1","genomic_B2","genomic_B3")
 
+paper.font <- theme(text=element_text(size=8),  axis.text=element_text(size=8,color="black"),  legend.text=element_text(size=8))
+
 # load data ----
 combined <- read.table("Rgt1_10aaD_annotations.txt",col.names = "aa")
 for (samp in samps) {
@@ -66,27 +68,14 @@ jpredall <- rbind(jpred0,jpred)
 brewercols <- brewer.pal(6,"Set1")
 
 # for paper, Figure 4D
-pdf(paste(out,"/Rgt1_10aaD_regulatory_domain_overlay.pdf",sep=""),3.8,1.8)
-ggplot(combined) + 
-  geom_rect(aes(xmin=520,xmax=550,ymin=-Inf,ymax=Inf), fill="tan1") +
-  geom_rect(aes(xmin=640,xmax=720,ymin=-Inf,ymax=Inf), fill="tan1") +
-  geom_rect(aes(xmin=750,xmax=800,ymin=-Inf,ymax=Inf), fill="tan1") +
-  geom_rect(aes(xmin=810,xmax=830,ymin=-Inf,ymax=Inf), fill="tan1") +
-  geom_bar(aes(x=aa+5,y=log2(ratio)),stat="identity",fill=brewercols[1],width=10) + theme_classic() + 
-  geom_segment(aes(x=aa+5,xend=aa+5,y=log2(ratioA),yend=log2(ratioB)),size=0.2) + 
-  geom_hline(aes(yintercept=0)) +
-  xlab("Rgt1 amino acid position") + ylab("Log2 3C/Genomic") + scale_x_continuous(expand=c(0,0),limits=c(0,1170),breaks=seq(0,1170,250)) + paper.font
-dev.off()
-
-# for paper, Figure 4--figure supplement 1
-pdf(paste(out,"/Rgt1_10aaD_iupred_jnetpred_overlay.pdf",sep=""),6,3)
+pdf(paste(out,"/Rgt1_10aaD_iupred_jnetpred_overlay.pdf",sep=""),3.4,1.8)
 ggplot(combined) + 
   geom_rect(data=jpredall,aes(xmin=aa-1,xmax=aa,ymin=-Inf,ymax=Inf,fill=jnetpred)) + scale_fill_manual(values=c("white","pink","lightblue")) + 
   geom_bar(aes(x=aa+5,y=log2(ratio)),stat="identity",width=10,fill=brewercols[1]) + 
   geom_segment(aes(x=aa+5,xend=aa+5,y=log2(ratioA),yend=log2(ratioB)),size=0.2) + 
-  theme_classic() + xlab("Rgt1 amino acid position") + ylab("Log2 (3C/Genomic)") + scale_x_continuous(expand=c(0,0),limits=c(0,1170),breaks=seq(0,1170,250)) + 
-  geom_line(data=idr,aes(x=pos,y=IUPred*4-3),color="black") + 
-  theme(legend.position="none",text=element_text(size=10),axis.text=element_text(size=10,color="black")) + 
+  theme_classic() + xlab("Rgt1 amino acid position") + ylab(expression(paste(Log[2]," 3C/Genomic"))) + scale_x_continuous(expand=c(0,0),limits=c(0,1170),breaks=seq(0,1170,250)) + 
+  geom_line(data=idr,aes(x=pos,y=IUPred*4-3),color="black", size=0.3) + 
+  theme(legend.position="none") + paper.font +
   scale_y_continuous(sec.axis = sec_axis(~./4+.75,name="Predicted disorder"))
 dev.off()
 
@@ -96,9 +85,10 @@ ggplot(combined) +
   geom_bar(aes(x=aa+5,y=log2(ratio)),stat="identity",fill=brewercols[1],width=10) + theme_classic() + 
   geom_segment(aes(x=aa+5,xend=aa+5,y=log2(ratioA),yend=log2(ratioB)),size=0.2) + 
   geom_hline(aes(yintercept=0)) +
-  xlab("Rgt1 amino acid position") + ylab("Log2 3C/Genomic") + scale_x_continuous(expand=c(0,0),limits=c(0,1170),breaks=seq(0,1170,250)) + paper.font
+  xlab("Rgt1 amino acid position") + ylab(expression(paste(Log[2]," 3C/Genomic"))) + scale_x_continuous(expand=c(0,0),limits=c(0,1170),breaks=seq(0,1170,250)) + paper.font
 dev.off()
 
+# for paper, Figure 4--figure supplement 1
 # all annotations from Polish et al, Genetics 2005
 pdf(paste(out,"/Rgt1_10aaD_Polish2005_overlay.pdf",sep=""),3.8,1.8)
 ggplot(combined) + 
@@ -122,5 +112,5 @@ ggplot(combined) +
   geom_bar(aes(x=aa+5,y=log2(ratio)),stat="identity",fill=brewercols[1],width=10) + theme_classic() + 
   geom_segment(aes(x=aa+5,xend=aa+5,y=log2(ratioA),yend=log2(ratioB)),size=0.2) + 
   geom_hline(aes(yintercept=0)) +
-  xlab("Rgt1 amino acid position") + ylab("Log2 3C/Genomic") + scale_x_continuous(expand=c(0,0),limits=c(0,1170),breaks=seq(0,1170,250)) + paper.font
+  xlab("Rgt1 amino acid position") + ylab(expression(paste(Log[2]," 3C/Genomic"))) + scale_x_continuous(expand=c(0,0),limits=c(0,1170),breaks=seq(0,1170,250)) + paper.font
 dev.off()

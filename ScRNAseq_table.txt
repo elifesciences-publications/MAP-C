@@ -1,0 +1,13 @@
+sample	genotype
+WT_1	WT
+WT_2	WT
+WT_3	WT
+leu3D_1	leu3D
+leu3D_2	leu3D
+leu3D_3	leu3D
+sdd4D_1	sdd4D
+sdd4D_2	sdd4D
+sdd4D_3	sdd4D
+rgt1D_1	rgt1D
+rgt1D_2	rgt1D
+rgt1D_3	rgt1D

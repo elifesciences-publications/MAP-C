@@ -2,7 +2,7 @@
 # interactors_ko.R
 # 
 # Seungsoo Kim
-# September 26, 2018
+# February 19, 2019
 
 # directories ----
 setwd("/Volumes/shendure-vol8/projects/mutagenesis.3C/nobackup/MAP-C")
@@ -57,6 +57,6 @@ pdf(paste(out,"/interactor_ko_bar_scatter.pdf",sep=""),3.2,2.1)
 ggplot(subset(combined,(`genomic_1` + `genomic_2` + `genomic_3` > 0.001) & (class %in% classes))) + 
   geom_bar(aes(x=class,y=log2(ratio),fill=class),stat="summary",fun.y="median",color="black") + 
   geom_point(aes(x=class,y=log2(ratio)),position="jitter",size=0.5) + 
-  scale_fill_manual(values=classcols) + theme_classic() + theme(legend.position="none") + xlab("") + ylab("Log2 3C/Genomic") + paper.font +
+  scale_fill_manual(values=classcols) + theme_classic() + theme(legend.position="none") + xlab("") + ylab(expression(paste(Log[2]," 3C/Genomic"))) + paper.font +
   theme(axis.text.x = element_text(angle=90,vjust=0.5,hjust=0), axis.text.y=element_text(hjust=0))
 dev.off()

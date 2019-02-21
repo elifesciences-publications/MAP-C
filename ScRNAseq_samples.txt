@@ -1,0 +1,12 @@
+WT_1	WT_1_RNAseq_S43_R1_001.fastq.gz	WT_1_RNAseq_S43_R2_001.fastq.gz
+WT_2	WT_2_RNAseq_S47_R1_001.fastq.gz	WT_2_RNAseq_S47_R2_001.fastq.gz
+WT_3	WT_3_RNAseq_S51_R1_001.fastq.gz	WT_3_RNAseq_S51_R2_001.fastq.gz
+leu3D_1	leu3D_1_RNAseq_S44_R1_001.fastq.gz	leu3D_1_RNAseq_S44_R2_001.fastq.gz
+leu3D_2	leu3D_2_RNAseq_S48_R1_001.fastq.gz	leu3D_2_RNAseq_S48_R2_001.fastq.gz
+leu3D_3	leu3D_3_RNAseq_S52_R1_001.fastq.gz	leu3D_3_RNAseq_S52_R2_001.fastq.gz
+sdd4D_1	sdd4D_1_RNAseq_S45_R1_001.fastq.gz	sdd4D_1_RNAseq_S45_R2_001.fastq.gz
+sdd4D_2	sdd4D_2_RNAseq_S49_R1_001.fastq.gz	sdd4D_2_RNAseq_S49_R2_001.fastq.gz
+sdd4D_3	sdd4D_3_RNAseq_S53_R1_001.fastq.gz	sdd4D_3_RNAseq_S53_R2_001.fastq.gz
+rgt1D_1	rgt1D_1_RNAseq_S46_R1_001.fastq.gz	rgt1D_1_RNAseq_S46_R2_001.fastq.gz
+rgt1D_2	rgt1D_2_RNAseq_S50_R1_001.fastq.gz	rgt1D_2_RNAseq_S50_R2_001.fastq.gz
+rgt1D_3	rgt1D_3_RNAseq_S54_R1_001.fastq.gz	rgt1D_3_RNAseq_S54_R2_001.fastq.gz

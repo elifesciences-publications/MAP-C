@@ -10,6 +10,7 @@ module load bedtools/2.26.0
 # fixed paths
 samples='error-prone_samples.txt'
 out='nobackup/error-prone'
+bt2='nobackup/bowtie2'
 
 # compile C++ code
 g++ -std=c++11 annotate_mutations.cpp -o annotate_mutations
@@ -17,16 +18,14 @@ g++ -std=c++11 annotate_mutations.cpp -o annotate_mutations
 # create output directories
 for x in paired aligned sge
 do
-	if [ ! -d $out/$x ]; then
-		mkdir $out/$x
-	fi
+	mkdir -p $out/$x
 done
 
 # index fasta files
 samtools faidx error-prone.fa
 
 # build bowtie2 indices
-bowtie2-build error-prone.fa nobackup/bowtie2/error-prone
+bowtie2-build error-prone.fa $bt2/error-prone
 
 while read name samptype r1 r2
 do

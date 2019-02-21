@@ -1,0 +1,10 @@
+sample	genotype
+ScHAS1pr-TDA1pr_WT_1	WT
+ScHAS1pr-TDA1pr_WT_2	WT
+ScHAS1pr-TDA1pr_WT_3	WT
+ScHAS1pr-TDA1pr_leu3_1	leu3
+ScHAS1pr-TDA1pr_leu3_2	leu3
+ScHAS1pr-TDA1pr_leu3_3	leu3
+ScHAS1pr-TDA1pr_rgt1x2_1	rgt1x2
+ScHAS1pr-TDA1pr_rgt1x2_2	rgt1x2
+ScHAS1pr-TDA1pr_rgt1x2_3	rgt1x2

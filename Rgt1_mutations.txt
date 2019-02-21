@@ -1,0 +1,5 @@
+Zn finger	32	90	1
+Q/N-rich	293	459	1
+C-terminal	461	1163	1
+S88A	88	88	2
+S758A	758	758	2

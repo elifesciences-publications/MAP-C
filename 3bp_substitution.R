@@ -2,7 +2,7 @@
 # 3bp_substitution.R
 # 
 # Seungsoo Kim
-# September 26, 2018
+# February 19, 2019
 
 # directories ----
 setwd("/Volumes/shendure-vol8/projects/mutagenesis.3C/nobackup/MAP-C")
@@ -61,19 +61,21 @@ ggplot(subset(casted.total, pos >= exptstart & pos <= exptend)) +
   geom_segment(aes(x=24.5,xend=34.5,y=1.3,yend=1.3)) +
   geom_segment(aes(x=57.5,xend=64.5,y=1.3,yend=1.3)) +
   geom_segment(aes(x=71.5,xend=81.5,y=1.3,yend=1.3)) +
+  geom_segment(aes(x=96.5,xend=106.5,y=1.3,yend=1.3)) +
   geom_segment(aes(x=118.5,xend=128.5,y=1.3,yend=1.3)) +
   geom_segment(aes(x=139.5,xend=149.5,y=1.3,yend=1.3)) +
   geom_segment(aes(x=161.5,xend=168.5,y=1.3,yend=1.3)) +
   geom_text(aes(x=29.5,y=2,label='Leu3'),hjust=0.5,size=2.85) +
   geom_text(aes(x=61,y=2,label='Sdd4'),hjust=0.5,size=2.85) +
   geom_text(aes(x=76.5,y=2,label='Rgt1'),hjust=0.5,size=2.85) +
+  geom_text(aes(x=101.5,y=2,label='Rgt1'),hjust=0.5,size=2.85) +
   geom_text(aes(x=123.5,y=2,label='Rgt1'),hjust=0.5,size=2.85) +
   geom_text(aes(x=144.5,y=2,label='Rgt1'),hjust=0.5,size=2.85) +
   geom_text(aes(x=165,y=2,label='Sdd4'),hjust=0.5,size=2.85) +
   geom_bar(aes(x=pos, y=log2(ratio)), width=1, fill=brewercols[1], stat="identity") + 
   geom_segment(aes(x=pos, xend=pos, y=log2(ratio1), yend=log2(ratio2)), color="black", size=0.2) + 
   theme_classic() + scale_x_continuous(breaks=seq(0,exptlen,25), limits=c(0,exptlen), labels=seq(0,exptlen,25) + offset) + 
-  scale_y_continuous(limits=c(-3.4,2.3), breaks=seq(-3,2)) + xlab("Position (bp)") + ylab("Log2 3C/Genomic") + paper.font
+  scale_y_continuous(limits=c(-3.4,2.3), breaks=seq(-3,2)) + xlab("Position (bp)") + ylab(expression(paste(Log[2]," 3C/Genomic"))) + paper.font
 dev.off()
 
 # for paper, Figure 1--figure supplement 2C
@@ -83,6 +85,6 @@ ggplot(subset(casted.total, pos >= exptstart & pos <= exptend)) +
   geom_bar(aes(x=pos, y=log2(off)), width=1, fill=brewercols[2], stat="identity") + 
   geom_segment(aes(x=pos, xend=pos, y=log2(off1), yend=log2(off2)), color="black", size=0.2) + 
   theme_classic() + scale_x_continuous(breaks=seq(0,exptlen,25), limits=c(0,exptlen), labels=seq(0,exptlen,25) + offset) + 
-  scale_y_continuous(limits=c(-3.4,2.3), breaks=seq(-3,2)) + xlab("Position (bp)") + ylab("Log2 3C/Genomic)") + paper.font
+  scale_y_continuous(limits=c(-3.4,2.3), breaks=seq(-3,2)) + xlab("Position (bp)") + ylab(expression(paste(Log[2]," 3C/Genomic"))) + paper.font
 dev.off()
 

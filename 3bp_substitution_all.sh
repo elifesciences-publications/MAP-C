@@ -1,5 +1,5 @@
 #!/bin/bash
-# run_all.sh
+# 3bp_substitution_all.sh
 # Seungsoo Kim
 
 # load modules
@@ -10,6 +10,7 @@ module load bedtools/2.26.0
 # fixed paths
 samples='3bp_substitution_samples.txt'
 out='nobackup/3bp_substitution'
+bt2='nobackup/bowtie2'
 
 # create output directories
 for x in paired aligned sge
@@ -17,11 +18,13 @@ do
 	mkdir -p $out/$x
 done
 
+mkdir -p $bt2
+
 # index fasta files
 samtools faidx 3bp_substitution.fa
 
 # build bowtie2 indices
-bowtie2-build 3bp_substitution.fa nobackup/bowtie2/3bp_substitution
+bowtie2-build 3bp_substitution.fa $bt2/3bp_substitution
 
 while read name samptype r1 r2
 do

@@ -12,7 +12,9 @@ module load bedtools/2.26.0
 primers='subsequences_primers.txt'
 data='data'
 out='nobackup/subsequences'
+bt2='nobackup/bowtie2'
 
+# sample info
 name=$1
 samptype=$2
 r1=$3
@@ -48,7 +50,7 @@ else
 fi
 
 # align reads
-bowtie2 --very-sensitive -x nobackup/bowtie2/HAS1pr-TDA1pr -U $out/paired/$name.assembled.fastq 2> $out/aligned/$name.out | samtools view -b - > $out/aligned/$name.bam
+bowtie2 --very-sensitive -x $bt2/HAS1pr-TDA1pr -U $out/paired/$name.assembled.fastq 2> $out/aligned/$name.out | samtools view -b - > $out/aligned/$name.bam
 
 # extract read end positions to convert to bed file
 samtools view $out/aligned/$name.bam | awk '$5 > 0 {OFS="\t"; print $3, $4, $6}' | ./read_end_position > $out/aligned/$name.bed

@@ -1,0 +1,3 @@
+full	1	1171
+Zn finger	46	76
+Q/N-rich	298	452

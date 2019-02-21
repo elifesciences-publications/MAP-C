@@ -1,0 +1,9 @@
+ScHAS1pr-TDA1pr_WT_1	WT_1_S1_R1_001.fastq.gz	WT_1_S1_R2_001.fastq.gz
+ScHAS1pr-TDA1pr_WT_2	WT_2_S2_R1_001.fastq.gz	WT_2_S2_R2_001.fastq.gz
+ScHAS1pr-TDA1pr_WT_3	WT_3_S3_R1_001.fastq.gz	WT_3_S3_R2_001.fastq.gz
+ScHAS1pr-TDA1pr_leu3_1	leu3_1_S4_R1_001.fastq.gz	leu3_1_S4_R2_001.fastq.gz
+ScHAS1pr-TDA1pr_leu3_2	leu3_2_S5_R1_001.fastq.gz	leu3_2_S5_R2_001.fastq.gz
+ScHAS1pr-TDA1pr_leu3_3	leu3_3_S6_R1_001.fastq.gz	leu3_3_S6_R2_001.fastq.gz
+ScHAS1pr-TDA1pr_rgt1x2_1	rgt1x2_1_S7_R1_001.fastq.gz	rgt1x2_1_S7_R2_001.fastq.gz
+ScHAS1pr-TDA1pr_rgt1x2_2	rgt1x2_2_S8_R1_001.fastq.gz	rgt1x2_2_S8_R2_001.fastq.gz
+ScHAS1pr-TDA1pr_rgt1x2_3	rgt1x2_3_S9_R1_001.fastq.gz	rgt1x2_3_S9_R2_001.fastq.gz

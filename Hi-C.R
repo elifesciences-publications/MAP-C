@@ -51,6 +51,13 @@ colnames(plotting) <- c("expt.sample","ref","bsize","mask","filt")
 plotting$matr <- paste("data/",plotting$expt.sample,".",plotting$ref,".",plotting$bsize,".matrix.txt",sep="")
 plotting$rsum <- paste("data/",plotting$expt.sample,".",plotting$ref,".",plotting$bsize,".rowsums.txt",sep="")
 
+loci <- data.frame("cer"=c(44+36,211+18,355+15,292,120+13,266+15),
+                   "uva"=c(391+28,594+17,723+15,672,507+13,646+14),
+                   "name"=c("HXT3","YKR075C","SKS1","TDA1","MIG1","ILV2"),
+                   "cerchr"=c("Scer_4","Scer_11","Scer_16","Scer_13","Scer_7","Scer_13"),
+                   "uvachr"=c("Sbay_2","Sbay_11","Sbay_16","Sbay_13","Sbay_7","Sbay_13"))
+loci$name <- as.character(loci$name)
+
 # make figures ----
 js <- 1:nrow(plotting)
 
@@ -101,8 +108,85 @@ for (j in js) {
   annotated$tel1 <- annotated$arm1-annotated$cen1
   annotated$tel2 <- annotated$arm2-annotated$cen2
   
+  # load loci
+  loci.merged <- merge(loci,chrannot,by.x="cerchr",by.y="V1")
+  colnames(loci.merged) <- c("cerchr","cer","uva","name","uvachr","cerst","cerend","cercen","cerno")
+  loci.merged <- merge(loci.merged,chrannot,by.x="uvachr",by.y="V1")
+  colnames(loci.merged) <- c("uvachr","cerchr","cer","uva","name","cerst","cerend","cercen","cerno","uvast","uvaend","uvacen","uvano")
+  loci.merged$locino <- factor(loci.merged$name,levels=loci$name)
+  loci.merged <- loci.merged[order(loci.merged$locino),]
+  
+  # loop through loci, making heatmaps centered at pairing between S. cer and S. uva copies of each locus
+  # for Figure 3--figure supplement 2
+  for (l in 1:nrow(loci.merged)) {
+    Lg1 <- loci.merged$cer[l]
+    Lg2 <- loci.merged$uva[l]
+
+    window <- 5
+    subbins1 <- seq(Lg1-window,Lg1+window)
+    subbins2 <- seq(Lg2-window,Lg2+window)
+    annotated.sub <- subset(annotated,bin1 %in% subbins1 & bin2 %in% subbins2)
+
+    pdf(paste(outdir,"/",loci.merged$name[l],"_",expt.sample,"_heatmap.pdf",sep=""),0.8,0.8)
+    p <- ggplot(annotated.sub) + geom_tile(aes(x=bin1,y=bin2,fill=norm)) +
+      geom_vline(aes(xintercept=loci.merged$cerst[l]-.5),size=0.25) +
+      geom_vline(aes(xintercept=loci.merged$cerend[l]-.5),size=0.25) +
+      geom_hline(aes(yintercept=loci.merged$uvast[l]-.5),size=0.25) +
+      geom_hline(aes(yintercept=loci.merged$uvaend[l]-.5),size=0.25) +
+      paperhm +
+      coord_fixed() +
+      scale_fill_gradientn(colors=c("white","orange","red","black"), limits=c(0,3), oob=squish, na.value="grey50", name = "O/E") +
+      theme(legend.position="none",text=element_text(size=6)) +
+      scale_x_continuous(#breaks=c(subbins1[1]-0.5,subbins1[length(subbins1)]+.5),
+        breaks=c(subbins1[1]+5),
+        labels=c(loci.merged$name[l]),
+        limits=c(subbins1[1]-.5,subbins1[1]+.5+2*window),
+        #labels=c(bsize/1000*(subbins1[1]-(chrannot[chrannot$V1==paste(g1,"_4",sep=""),]$V2)),bsize/1000*(subbins1[length(subbins1)]-(chrannot[chrannot$V1==paste(g1,"_4",sep=""),]$V2))),
+        expand=c(0,0)) +
+      scale_y_continuous(breaks=c(subbins2[1]+5),
+                         labels=c(loci.merged$name[l]),
+                         limits=c(subbins2[1]-.5,subbins2[1]+.5+2*window),
+                         #breaks=c(subbins2[1]-0.5,subbins2[length(subbins2)]+.5),
+                         #labels=c(bsize/1000*(subbins2[1]-(chrannot[chrannot$V1==paste(g2,"_2",sep=""),]$V2)),bsize/1000*(subbins2[length(subbins2)]-(chrannot[chrannot$V1==paste(g2,"_2",sep=""),]$V2))),
+                         expand=c(0,0)) + theme(axis.text.y = element_text(hjust=0.5,angle=90))
+    grid.newpage()
+    gt <- ggplot_gtable(ggplot_build(p))
+    gt$layout$clip[gt$layout$name == "panel"] <- "off"
+    chart <- arrangeGrob(gt)
+    grid.draw(chart)
+    grid.force()
+    dev.off()
+  }
+  
+  
+  # heatmap of interactions among motif clusters
+  # for Figure 3--figure supplement 4
+  subbins <- c(loci.merged$cer,loci.merged$uva)
+  names <- c(loci.merged$name,loci.merged$name)
+  annotated.sub <- subset(annotated,bin1 %in% subbins & bin2 %in% subbins)
+  annotated.sub$bin1 <- factor(annotated.sub$bin1,levels=subbins)
+  annotated.sub$bin2 <- factor(annotated.sub$bin2,levels=subbins)
+  
+  pdf(paste(outdir,"/all_loci_",expt.sample,"_heatmap.pdf",sep=""),2.2,2.2)
+  p <- ggplot(annotated.sub) + geom_tile(aes(x=bin1,y=bin2,fill=norm)) +
+    paperhm +
+    theme_classic() +
+    coord_fixed() +
+    scale_fill_gradientn(colors=c("white","orange","red","black"), limits=c(0,5), oob=squish, na.value="grey50", name = "O/E") +
+    theme(plot.margin=unit(c(0.2,0.2,0.2,0.2),"cm"),legend.position="none") +
+    geom_hline(aes(yintercept=nrow(loci.merged)+0.5)) + 
+    geom_vline(aes(xintercept=nrow(loci.merged)+0.5)) + 
+    scale_x_discrete(labels=names) +
+    scale_y_discrete(labels=names) + theme(axis.text.x = element_text(angle=90,hjust=1,vjust=0.5,size=8,color="black"),axis.text.y = element_text(size=8,color="black")) + xlab("") + ylab("")
+  grid.newpage()
+  gt <- ggplot_gtable(ggplot_build(p))
+  gt$layout$clip[gt$layout$name == "panel"] <- "off"
+  chart <- arrangeGrob(gt)
+  grid.draw(chart)
+  dev.off()
+  
   # heatmap of interactions among HAS1/TDA1 and HXT3
-  # for Figure 3--figure supplement 1
+  # for Figure 3--figure supplement 3
   HAS1TDA1g1 <- 292
   HAS1TDA1g2 <- 672
   HXT3g1 <- 80
@@ -132,7 +216,7 @@ for (j in js) {
   grid.draw(chart)
   dev.off()
   
-  # HXT3-centered heatmap, for Figure 3B
+  # HXT3-centered heatmap, for Figure 3D
   window <- 5
   subbins1 <- seq(HXT3g1-window,HXT3g1+window)
   subbins2 <- seq(HXT3g2-window,HXT3g2+window)
@@ -210,7 +294,7 @@ for (i in 1:length(filelist)) {
   all_HXT3 <- rbind(all_HXT3,toadd_h)
 }
 
-# for paper, Figure 3C
+# for paper, Figure 3E
 pdf(paste(outdir,"/HXT3_violin.pdf",sep=""),2.4,1.4)
 ggplot(subset(all_HXT3,V3=="comp")) + 
   geom_violin(aes(x=factor(V2,levels=samplist),y=V1),fill="darkgrey") + 
